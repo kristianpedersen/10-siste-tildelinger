@@ -21,7 +21,7 @@ app.set("view engine", "pug")
 app.get("/", async function renderPugTemplate(_, res) {
 	res.render("index", { message: await getBrregData() })
 })
-app.listen(3000, () => console.log("http://localhost:3000"))
+app.listen(process.env.PORT || 3000, () => console.log("http://localhost:3000"))
 
 // 2. Søk
 // API-et lar oss begrense søket etter dato, men de 10 siste tildelingene kan ha vært den siste uka, måneden, osv.
